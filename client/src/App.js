@@ -1,5 +1,6 @@
 import React from 'react'
 import MainPage from './pages/MainPage'
+import Login from './pages/Login'
 
 import {
   BrowserRouter,
@@ -12,6 +13,7 @@ function App() {
 		<BrowserRouter>
       		<Routes>
         		<Route exact path="/" element = { <MainPage /> }/>
+        		<Route exact path="/login" element = { <Login /> }/>
       		</Routes>
     	</BrowserRouter>
 	)
