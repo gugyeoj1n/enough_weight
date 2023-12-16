@@ -6,7 +6,7 @@ const articleSchema = mongoose.Schema({
         type: User
     },
     */
-    datetime: {
+    title: {
         type: String
     },
     content: {
@@ -19,9 +19,6 @@ const articleSchema = mongoose.Schema({
         type: Number,
         default: 0
     },
-    title: {
-        type: String
-    }
-})
+}, { timestamps : true})
 
 module.exports = mongoose.model('Article', articleSchema)

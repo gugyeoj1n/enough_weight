@@ -6,6 +6,7 @@ const port = 7676;
 //routes 불러오기
 const authRouter = require("./routes/AuthRouter");
 const routineRouter = require("./routes/RoutineRouter");
+const articleRouter = require("./routes/ArticleRouter");
 
 // MongoDB 연결
 const mongoose = require("mongoose");
@@ -31,6 +32,7 @@ app.get("/main", (req, res) => {
 // auth 경로로 오는 모든 http 요청은 authRouter를 사용!
 app.use("/auth", authRouter);
 app.use("/routine", routineRouter);
+app.use("/article", articleRouter);
 
 app.listen(port, () => {
   console.log(`${port} connected.`);

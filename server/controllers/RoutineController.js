@@ -17,13 +17,13 @@ exports.createRoutine = async (req, res, next) => {
 exports.readRoutine = async (req, res, next) => {
     try {
         const routineId = req.params.routineId;
-        const routine = await routine.findById(routineId);
+        const foundRoutine = await routine.findById(routineId);
 
-        if (!routine) {
-            return res.status(404).json({ message: "Routine not found"});
+        if (!foundRoutine) {
+            return res.status(404).json({message: "Routine not found"});
         }
 
-        res.status(200).json(routine);
+        res.status(200).json(foundRoutine);
     } catch (error) {
         next(error);
     }
