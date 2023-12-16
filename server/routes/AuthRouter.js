@@ -8,4 +8,6 @@ router.post("/join", isNotLoggedIn, join);
 router.post("/login", isNotLoggedIn, login);
 router.get("/logout", isLoggedIn, logout);
 
+router.get("/test", isLoggedIn); //로그인 테스트용
+
 module.exports = router;

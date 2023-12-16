@@ -3,8 +3,8 @@ const article = require('../models/Article');
 
 exports.showProfile = async (req, res, next) => {
     try {
-        // const userId = req.user.id;
-        const userId = '657d5ca3c8ae61743138fbfa'; // 테스트용 데이터
+        console.log(req.user);
+        const userId = req.user.id;
 
         const userArticles = await article.find({ "author.id" : userId }).exec();
 
