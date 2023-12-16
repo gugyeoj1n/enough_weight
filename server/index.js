@@ -8,6 +8,7 @@ const authRouter = require("./routes/AuthRouter");
 const routineRouter = require("./routes/RoutineRouter");
 const articleRouter = require("./routes/ArticleRouter");
 const searchRouter = require("./routes/SearchRouter");
+const profileRouter = require("./routes/profileRouter");
 
 // MongoDB 연결
 const mongoose = require("mongoose");
@@ -35,6 +36,7 @@ app.use("/auth", authRouter);
 app.use("/routine", routineRouter);
 app.use("/article", articleRouter);
 app.use("/search", searchRouter);
+app.use("/profile", profileRouter);
 
 app.listen(port, () => {
   console.log(`${port} connected.`);

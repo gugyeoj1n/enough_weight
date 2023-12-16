@@ -4,12 +4,12 @@ const routineSchema = mongoose.Schema({
     title: {
         type: String,
     },
-    datetime: {
-        type: String,
-    },
     author: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        nickname: String,
     },
     content: {
         type: [
