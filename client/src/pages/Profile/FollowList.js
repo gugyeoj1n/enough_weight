@@ -1,24 +1,13 @@
 import './FollowList.css'
+import FollowItem from './FollowItem'
 
 function FollowList(){
     return (
         <div className="followList">
-                        <div className="followListContainer">
-                            <div className="followItem">
-                                <text className="followName">
-                                    abcdefghijk
-                                </text>
-                                <div className="followInteractButtons">
-                                    <button className="followInteractButton">
-                                        <img src="images/person.svg" className="followInteractIcon"/>
-                                    </button>
-                                    <button className="followInteractButton">
-                                        <img src="images/delete.png" className="followInteractIcon"/>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div className="followListContainer">
+                <FollowItem id={ "d" }/>
+            </div>
+        </div>
     )
 }
 

@@ -1,0 +1,8 @@
+.articleContent {
+    width: 350px;
+    height: 100%;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

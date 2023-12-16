@@ -1,8 +1,14 @@
 import './Profile.css'
 import React, { useState } from 'react'
 import FollowList from './FollowList'
+import ArticleList from './ArticleList'
+import RoutineList from './RoutineList'
 
 function Profile(){
+    // 로그인된 계정의 프로필 페이지라면
+    // 관리 버튼을 활헝화하고 아니라면
+    // 비활성화하는 로직이 필요함
+
     const [isFollowOpen, setIsFollowOpen] = useState(false);
 
     const ManageModal = () => {
@@ -31,7 +37,10 @@ function Profile(){
                         관리
                 </button>
             </div>
-            
+            <div className="contents">
+                <ArticleList/>
+                <RoutineList/>
+            </div>
             {isFollowOpen && (
             <div className="followModal">
                 <div className="followModalContent">
