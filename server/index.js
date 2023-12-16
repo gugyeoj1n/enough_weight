@@ -45,12 +45,20 @@ app.use(
 app.use(passport.initialize()); // passport 사용한다고 express 에 알림 (req.user, req.login, req.isAuthenticate 등등이 만들어짐)
 app.use(passport.session()); // session 을 이용하여 passport 를 동작한다
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+
 app.get("/main", (req, res) => {
   res.send("HI");
 });
 
 // auth 경로로 오는 모든 http 요청은 authRouter를 사용
 app.use("/auth", authRouter);
+
+app.post("/api/test", (req, res) => {
+    console.log(req.body.userId)
+    res.send("HI")
+})
 
 app.listen(port, () => {
   console.log(`${port} connected.`);
