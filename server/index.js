@@ -14,8 +14,15 @@ mongoose.connect(dbKey.mongoURI, { dbName: "enough-weight" })
         console.log(err)
     })
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
 
 app.get("/main", (req, res) => {
+    res.send("HI")
+})
+
+app.post("/api/test", (req, res) => {
+    console.log(req.body.userId)
     res.send("HI")
 })
 

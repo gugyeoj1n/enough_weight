@@ -4,6 +4,7 @@ import MainPage from './pages/MainPage/MainPage'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Profile from './pages/Profile/Profile'
+import ArticlePost from './pages/Article/ArticlePost'
 
 import {
   BrowserRouter,
@@ -19,6 +20,7 @@ function App() {
         		<Route exact path="/login" element = { <Login /> }/>
 				<Route eaxct path="/register" element = { <Register /> }/>
 				<Route exact path="/profile" element = { <Profile /> }/>
+				<Route exact path="/post" element= { <ArticlePost /> }/>
       		</Routes>
     	</BrowserRouter>
 	)
