@@ -5,7 +5,7 @@ exports.createArticle = async (req, res, next) => {
         const newArticle = await article.create({
             title: req.body.title,
             content: req.body.content,
-            likes: req.body.likes,
+            author: req.user.nickname,
             pictures: req.files,
         });
 
