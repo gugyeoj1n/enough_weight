@@ -1,5 +1,7 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
+const passport = require("passport");
+const { isLoggedIn, isNotLoggedIn } = require("../middlewares");
 
 // /auth/join 으로 post 요청이 들어올경우 실행될 로직
 exports.join = async (req, res, next) => {
@@ -21,7 +23,7 @@ exports.join = async (req, res, next) => {
       password: hashedPassword,
     });
 
-    console.log(savedUser);
+    console.log(savedUser); // db 저장 확인용 (추후 삭제)
     return res.redirect("/");
   } catch (error) {
     console.error(error);
@@ -30,9 +32,26 @@ exports.join = async (req, res, next) => {
 };
 
 exports.login = (req, res, next) => {
-  res.send("login");
+  passport.authenticate("local", (authError, user, info) => {
+    if (authError) {
+      console.error(authError);
+      return next(authError);
+    }
+    if (!user) {
+      return res.redirect(`/?error=${info.message}`);
+    }
+    return req.login(user, (loginError) => {
+      if (loginError) {
+        console.error(loginError);
+        return next(loginError);
+      }
+      return res.redirect("/main");
+    });
+  })(req, res, next);
 };
 
-exports.logout = (req, res, next) => {
-  res.send("logout!!");
+exports.logout = (req, res) => {
+  req.logout(() => {
+    res.redirect("/");
+  });
 };
