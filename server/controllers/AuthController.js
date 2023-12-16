@@ -55,3 +55,7 @@ exports.logout = (req, res) => {
     res.redirect("/");
   });
 };
+
+exports.user = (req, res) => {
+    res.json({ user: req.user });
+};

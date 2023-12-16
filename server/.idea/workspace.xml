@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5afcf258-2592-4332-8516-74ab912256dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/profileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/profileController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AuthController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/AuthRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/AuthRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
