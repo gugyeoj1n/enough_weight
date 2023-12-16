@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import './MainPage.css'
 import ArticleList from "./ArticleList"
+import axios from 'axios'
 
 function MainPage()
 {
@@ -8,6 +9,19 @@ function MainPage()
 
     const loginNavigate = () => {
         navigate("/login")
+    }
+
+    const logout = () => {
+        if(window.confirm("정말 로그아웃하시겠습니까?")) {
+            logoutSubmit()
+        }
+    }
+
+    const logoutSubmit = async () => {
+        await axios.get('/auth/logout').then(response => {
+            if(response.data.success === true)
+                logoutNavigate()
+        })
     }
 
     const logoutNavigate = () => {
@@ -41,7 +55,7 @@ function MainPage()
                         <button className="registerButton" onClick={ registerNavigate }>
                             회원가입
                         </button>
-                        <button className="logoutButton" onClick={ logoutNavigate }>
+                        <button className="logoutButton" onClick={ logout }>
                             로그아웃
                         </button>
                     </div>
