@@ -1,0 +1,80 @@
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+}
+
+.titleText {
+    margin: 5%;
+    font-size: 30px;
+}
+
+.accountInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.followManageButton {
+    border: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.id {
+    font-size: 20px;
+}
+
+.follow {
+    font-size: 15px;
+}
+
+.followModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 배경에 투명도를 줌 */
+}
+
+.followModalContent {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close {
+    font-size: 25px;
+    cursor: pointer;
+    margin: 10px;
+}
+  
+.followButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.followButton {
+    width: 90px;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}

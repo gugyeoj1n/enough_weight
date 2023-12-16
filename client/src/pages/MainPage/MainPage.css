@@ -152,11 +152,21 @@
     border-radius: 25px;
 }
 
-.navigationItem {
+.navigationButton {
     height: 40px;
     width: 40px;
     margin-top: 15px;
     margin-bottom: 15px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigationItem {
+    height: 40px;
+    width: 40px;
 }
 
 .articles {
@@ -173,7 +183,7 @@
     border: none;
     border-radius: 3%;
     width: 48%;
-    height: 67%;
+    height: 70%;
     margin: 5px;
     display: flex;
     flex-direction: column;

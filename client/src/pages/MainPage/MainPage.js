@@ -12,7 +12,15 @@ function MainPage()
     const logoutNavigate = () => {
         // 로그인 정보 삭제 필요
 
+        navigate("/login")
+    }
+
+    const registerNavigate = () => {
         navigate("/register")
+    }
+
+    const profileNavigate = () => {
+        navigate("/profile")
     }
 
     return (
@@ -29,7 +37,7 @@ function MainPage()
                         <button className="followingText">
                             팔로잉 100
                         </button>
-                        <button className="registerButton">
+                        <button className="registerButton" onClick={ registerNavigate }>
                             회원가입
                         </button>
                         <button className="logoutButton" onClick={ logoutNavigate }>
@@ -254,11 +262,21 @@ function MainPage()
                     </div>
                 </div>
                 <div className="navigationBar">
-                    <img src="images/home.png" className="navigationItem"/>
-                    <img src="images/search.svg" className="navigationItem"/>
-                    <img src="images/person.svg" className="navigationItem"/>
-                    <img src="images/edit.svg" className="navigationItem"/>
-                    <img src="images/setting.svg" className="navigationItem"/>
+                    <button className="navigationButton">
+                        <img src="images/home.png" className="navigationItem"/>
+                    </button>
+                    <button className="navigationButton">
+                        <img src="images/search.svg" className="navigationItem"/>
+                    </button>
+                    <button className="navigationButton" onClick={ profileNavigate }>
+                        <img src="images/person.svg" className="navigationItem"/>
+                    </button>
+                    <button className="navigationButton">
+                        <img src="images/edit.svg" className="navigationItem"/>
+                    </button>
+                    <button className="navigationButton">
+                        <img src="images/setting.svg" className="navigationItem"/>
+                    </button>
                 </div>
             </div>
         </div>
