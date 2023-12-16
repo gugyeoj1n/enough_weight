@@ -7,6 +7,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import Register from './pages/Register';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
       		<Routes>
         		<Route exact path="/" element = { <MainPage /> }/>
         		<Route exact path="/login" element = { <Login /> }/>
+				<Route eaxct path="/register" element = { <Register /> }/>
       		</Routes>
     	</BrowserRouter>
 	)

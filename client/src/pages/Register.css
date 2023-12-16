@@ -1,0 +1,34 @@
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleText {
+    margin: 5%;
+    font-size: 30px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputInfo {
+    margin: 5%;
+    width: 100px;
+}
+
+.submitButton {
+    width: 80px;
+    height: 40px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: gray;
+    border: none;
+    border-radius: 15px;
+    color: white;
+}

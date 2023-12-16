@@ -6,16 +6,35 @@ function MainPage()
     const navigate = useNavigate()
 
     const loginNavigate = () => {
-        navigate("/Login")
+        navigate("/login")
+    }
+
+    const logoutNavigate = () => {
+        // 로그인 정보 삭제 필요
+
+        navigate("/register")
     }
 
     return (
         <div>
-            <div className="background">
+            <div className="mainBackground">
                 <div className="topBar">
-                    이정욱 제쳤고 ㅋㅋ
                     <div className="account">
-                        
+                        <text className="idText">
+                            gugyeoj1n
+                        </text>
+                        <button className="followerText">
+                            팔로워 100
+                        </button>
+                        <button className="followingText">
+                            팔로잉 100
+                        </button>
+                        <button className="registerButton">
+                            회원가입
+                        </button>
+                        <button className="logoutButton" onClick={ logoutNavigate }>
+                            로그아웃
+                        </button>
                     </div>
                     <div className="search">
                         <img className="searchIcon" src="images/search.svg"/>
@@ -23,9 +42,42 @@ function MainPage()
                     </div>
                 </div>
                 <div className="main">
-                    오 이게되네 ㅋㅋ
                     <div className="category">
                         <img className="categoryIcon" src="images/menu.png"/>
+                    </div>
+                    <div className="articles">
+                        <div className="article">
+                            <div className="profile">
+                                프로필 사진이랑 이름 게시날짜 좋아요수
+                            </div>
+                            <div className="content">
+                                내용
+                            </div>
+                        </div>
+                        <div className="article">
+                            <div className="profile">
+
+                            </div>
+                            <div className="content">
+
+                            </div>
+                        </div>
+                        <div className="article">
+                            <div className="profile">
+
+                            </div>
+                            <div className="content">
+
+                            </div>
+                        </div>
+                        <div className="article">
+                            <div className="profile">
+
+                            </div>
+                            <div className="content">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="navigationBar">
