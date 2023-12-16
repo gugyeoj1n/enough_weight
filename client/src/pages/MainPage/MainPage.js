@@ -4,6 +4,7 @@ import ArticleList from "./ArticleList"
 import NavigationBar from "../NavigationBar"
 import axios from 'axios'
 import React, { useEffect } from 'react'
+import Session from 'react-session-api'
 
 function MainPage()
 {
@@ -27,7 +28,8 @@ function MainPage()
     }
 
     const logoutNavigate = () => {
-        // 로그인 정보 삭제 필요
+        Session.remove("user_id")
+        Session.remove("user_nickname")
 
         navigate("/login")
     }
@@ -36,12 +38,14 @@ function MainPage()
         navigate("/register")
     }
 
-    const getUserData = async () => {
-        // /auth/user
-    }
-
     useEffect(() => {
-        getUserData()
+        if(!Session.get("user_id")) {
+            loginNavigate()
+        } else {
+            // 로그인된 계정의 정보를 담은 요청을 보내서
+            // 팔로우하는 사람들의 최신 게시글을 가져와야 됨
+            console.log("SIUUUUUUUUUUUUUU")
+        }
     }, [])
 
     return (

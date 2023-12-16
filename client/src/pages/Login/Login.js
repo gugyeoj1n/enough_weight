@@ -2,6 +2,7 @@ import './Login.css'
 import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
 import axios from 'axios'
+import Session from 'react-session-api'
 
 function Login(){
     const navigate = useNavigate()
@@ -24,8 +25,18 @@ function Login(){
 
     const request = async () => {
         await axios.post('/auth/login', data).then(response => {
-            if(response.data.success === true)
-                mainNavigate()
+            if(response.data.success === true) {
+                const getUserData = async () => {
+                    await axios.get("/auth/user").then(response => {
+                        const user = response.data.user
+                        Session.set("user_nickname", user.nickname)
+                        Session.set("user_id", user._id)
+                        mainNavigate()
+                    })
+                }
+
+                getUserData()
+            }
             else {
                 window.confirm("일치하는 회원이 존재하지 않거나 오류가 발생했습니다.")
             }

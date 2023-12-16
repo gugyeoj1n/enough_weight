@@ -1,7 +1,26 @@
 import './ArticlePost.css'
 import NavigationBar from '../NavigationBar'
+import { useNavigate } from 'react-router-dom'
+import Session from 'react-session-api'
+import React, { useEffect } from 'react'
 
 function ArticlePost(){
+    const navigate = useNavigate()
+
+    const loginNavigate = () => {
+        navigate("/login")
+    }
+
+    useEffect(() => {
+        if(!Session.get("user_id")) {
+            if(window.confirm("로그인된 정보가 없어 로그인 화면으로 이동합니다.")) {
+                loginNavigate()
+            } else {
+                loginNavigate()
+            }
+        }
+    }, [])
+
     return (
         <div className='background'>
             <div className='titleText'>
