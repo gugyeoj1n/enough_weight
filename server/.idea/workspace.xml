@@ -5,6 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5afcf258-2592-4332-8516-74ab912256dc" name="Changes" comment="" />
+    <list default="true" id="5afcf258-2592-4332-8516-74ab912256dc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/profileController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/profileRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Routine.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Routine.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +59,21 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;uk&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ukly/Documents/GitHub/enough_weight/server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ukly\Documents\GitHub\enough_weight\server\controllers" />
@@ -69,6 +92,7 @@
       <workItem from="1702707406653" duration="9222000" />
       <workItem from="1702717041468" duration="9006000" />
       <workItem from="1702739667910" duration="1280000" />
+      <workItem from="1702739667910" duration="594000" />
     </task>
     <servers />
   </component>

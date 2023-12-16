@@ -1,27 +1,27 @@
 const mongoose = require("../node_modules/mongoose")
 
 const articleSchema = mongoose.Schema({
-    /*
+
     author: {
-        type: User
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        nickname: String,
     },
-    */
-    datetime: {
+    title: {
         type: String
     },
     content: {
         type: String
     },
-    picture: {
-        type: String
+    pictures: {
+        type: [Object]
     },
     likes: {
         type: Number,
         default: 0
     },
-    title: {
-        type: String
-    }
-})
+}, { timestamps : true })
 
 module.exports = mongoose.model('Article', articleSchema)
