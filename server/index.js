@@ -7,6 +7,7 @@ const port = 7676;
 const authRouter = require("./routes/AuthRouter");
 const routineRouter = require("./routes/RoutineRouter");
 const articleRouter = require("./routes/ArticleRouter");
+const searchRouter = require("./routes/SearchRouter");
 
 // MongoDB 연결
 const mongoose = require("mongoose");
@@ -33,6 +34,7 @@ app.get("/main", (req, res) => {
 app.use("/auth", authRouter);
 app.use("/routine", routineRouter);
 app.use("/article", articleRouter);
+app.use("/search", searchRouter);
 
 app.listen(port, () => {
   console.log(`${port} connected.`);

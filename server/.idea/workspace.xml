@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5afcf258-2592-4332-8516-74ab912256dc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/ArticleController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/ArticleRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/RoutineController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/RoutineController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/SearchController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/SearchRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +72,7 @@
       <workItem from="1701660863972" duration="5704000" />
       <workItem from="1702646954404" duration="2742000" />
       <workItem from="1702707406653" duration="9222000" />
-      <workItem from="1702717041468" duration="4639000" />
+      <workItem from="1702717041468" duration="5954000" />
     </task>
     <servers />
   </component>
