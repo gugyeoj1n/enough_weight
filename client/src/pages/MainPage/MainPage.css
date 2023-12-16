@@ -91,6 +91,7 @@
     position: absolute;
     left: 70%;
     top: 45%;
+    cursor: pointer;
 }
 
 .logoutButton {
@@ -103,6 +104,7 @@
     text-align: right;
     left: 70%;
     top: 70%;
+    cursor: pointer;
 }
 
 .idText {
@@ -133,38 +135,4 @@
     position: absolute;
     left: 5%;
     top: 75%;
-}
-
-.navigationBar {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    margin-right: 10%;
-    height: 380px;
-    width: 70px;
-    background: #797979;
-    border-radius: 25px;
-}
-
-.navigationButton {
-    height: 40px;
-    width: 40px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border: none;
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.navigationItem {
-    height: 40px;
-    width: 40px;
 }

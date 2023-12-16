@@ -1,4 +1,5 @@
 import './ArticlePost.css'
+import NavigationBar from '../NavigationBar'
 
 function ArticlePost(){
     return (
@@ -19,6 +20,7 @@ function ArticlePost(){
                     등록하기
                 </button>
             </div>
+            <NavigationBar/>
         </div>
     )
 }

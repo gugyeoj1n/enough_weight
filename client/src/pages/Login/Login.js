@@ -26,6 +26,9 @@ function Login(){
         await axios.post('/auth/login', data).then(response => {
             if(response.data.success === true)
                 mainNavigate()
+            else {
+                window.confirm("일치하는 회원이 존재하지 않거나 오류가 발생했습니다.")
+            }
         })
     }
 

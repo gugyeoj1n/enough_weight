@@ -24,6 +24,7 @@
     width: 60px;
     height: 30px;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .id {
@@ -77,6 +78,7 @@
     border: none;
     border-radius: 15px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .contents {
