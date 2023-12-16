@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import FollowList from './FollowList'
 import ArticleList from './ArticleList'
 import RoutineList from './RoutineList'
+import NavigationBar from '../NavigationBar'
 
 function Profile(){
     // 로그인된 계정의 프로필 페이지라면
@@ -57,6 +58,7 @@ function Profile(){
                 </div>
             </div>
             )}
+            <NavigationBar/>
         </div>
     )
 }

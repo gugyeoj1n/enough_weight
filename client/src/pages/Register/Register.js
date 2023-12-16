@@ -1,17 +1,37 @@
 import './Register.css'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function Register(){
+    const navigate = useNavigate()
+
     const [emailInput, setEmailInput] = useState('')
     const [idInput, setIdInput] = useState('')
     const [pwInput, setPwInput] = useState('')
+
+    const loginNavigate = () => {
+        navigate("/login")
+    }
+
+    const data = {
+        email: emailInput,
+        nickname: idInput,
+        password: pwInput
+    }
+
+    const request = async () => {
+        await axios.post('/auth/join', data).then(response => {
+            if(response.data.success === true)
+                loginNavigate()
+        })
+    }
 
     const registerSubmit = () => {
         if(emailInput.trim() === '' || idInput.trim() === '' || pwInput.trim() === '')
             return
         
-        // 회원가입 로직 수행 필요
-        console.log("REGISTER")
+        request()
     }
 
     return (

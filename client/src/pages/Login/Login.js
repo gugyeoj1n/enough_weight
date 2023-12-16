@@ -1,6 +1,7 @@
 import './Login.css'
 import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
+import axios from 'axios'
 
 function Login(){
     const navigate = useNavigate()
@@ -9,14 +10,33 @@ function Login(){
         navigate("/register")
     }
 
+    const mainNavigate = () => {
+        navigate("/")
+    }
+
     const [idInput, setIdInput] = useState('')
     const [pwInput, setPwInput] = useState('')
+
+    const data = {
+        email: idInput,
+        password: pwInput
+    }
+
+    const request = async () => {
+        await axios.post('/auth/login', data).then(response => {
+            if(response.data.success === true)
+                mainNavigate()
+            else {
+                window.confirm("일치하는 회원이 존재하지 않거나 오류가 발생했습니다.")
+            }
+        })
+    }
 
     const loginSubmit = () => {
         if(idInput.trim() === '' || pwInput.trim() === '')
             return
         
-        // 로그인 로직 수행 필요
+        request()
         console.log("LOGIN")
     }
 
@@ -25,7 +45,7 @@ function Login(){
             <div className="titleText">넉쇠</div>
             <div className="input">
                 <div className="inputInfo">
-                    ID :
+                    EMAIL :
                 </div>
                 <input type="text" value={ idInput || '' } onChange={ (e) => {
                     setIdInput(e.target.value)

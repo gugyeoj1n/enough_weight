@@ -24,7 +24,7 @@ exports.join = async (req, res, next) => {
     });
 
     console.log(savedUser); // db 저장 확인용 (추후 삭제)
-    return res.redirect("/");
+    return res.send({ success: true });
   } catch (error) {
     console.error(error);
     next(error);
@@ -38,21 +38,21 @@ exports.login = (req, res, next) => {
       return next(authError);
     }
     if (!user) {
-      return res.redirect(`/?error=${info.message}`);
+      return res.send({ success: false });
     }
     return req.login(user, (loginError) => {
       if (loginError) {
         console.error(loginError);
         return next(loginError);
       }
-      return res.redirect("/main");
+      return res.send({ success: true });
     });
   })(req, res, next);
 };
 
 exports.logout = (req, res) => {
   req.logout(() => {
-    res.redirect("/");
+    res.send({ success: true });
   });
 };
 
