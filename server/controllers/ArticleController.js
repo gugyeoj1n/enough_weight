@@ -3,10 +3,10 @@ const article = require('../models/Article');
 exports.createArticle = async (req, res, next) => {
     try {
         const newArticle = await article.create({
-            title: req.body.title,
-            content: req.body.content,
+            title: req.body.json.title,
+            content: req.body.json.content,
             likes: req.body.likes,
-            pictures: req.files,
+            pictures: req.body.pictures,
         });
 
         res.json(newArticle);
