@@ -1,3 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const {} = requrie('../controllers/RoutineController')
+
+const { createRoutine, readRoutine, updateRoutine, deleteRoutine } = require('../controllers/RoutineController')
+
+router.post('/', createRoutine);
+
+router.get('/:routineId', readRoutine);
+
+router.patch('/:routineId', updateRoutine);
+
+router.delete('/:routineId', deleteRoutine);
+
+module.exports = router;

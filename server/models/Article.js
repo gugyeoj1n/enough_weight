@@ -12,8 +12,8 @@ const articleSchema = mongoose.Schema({
     content: {
         type: String
     },
-    picture: {
-        type: String
+    pictures: {
+        type: [Object]
     },
     likes: {
         type: Number,

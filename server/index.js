@@ -5,10 +5,13 @@ const port = 7676;
 
 //routes 불러오기
 const authRouter = require("./routes/AuthRouter");
+const routineRouter = require("./routes/RoutineRouter");
 
 // MongoDB 연결
 const mongoose = require("mongoose");
 const dbKey = require("./config/dev");
+
+app.use(express.json());
 
 mongoose
   .connect(dbKey.mongoURI, { dbName: "enough-weight" })
@@ -27,6 +30,7 @@ app.get("/main", (req, res) => {
 
 // auth 경로로 오는 모든 http 요청은 authRouter를 사용!
 app.use("/auth", authRouter);
+app.use("/routine", routineRouter);
 
 app.listen(port, () => {
   console.log(`${port} connected.`);
