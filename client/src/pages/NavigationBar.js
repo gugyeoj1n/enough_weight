@@ -9,7 +9,7 @@ function NavigationBar(){
     }
 
     const postNavigate = () => {
-        navigate("/post")
+        navigate("/post_article")
     }
 
     const mainNavigate = () => {

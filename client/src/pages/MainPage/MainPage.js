@@ -3,6 +3,7 @@ import './MainPage.css'
 import ArticleList from "./ArticleList"
 import NavigationBar from "../NavigationBar"
 import axios from 'axios'
+import React, { useEffect } from 'react'
 
 function MainPage()
 {
@@ -34,6 +35,14 @@ function MainPage()
     const registerNavigate = () => {
         navigate("/register")
     }
+
+    const getUserData = async () => {
+        // /auth/user
+    }
+
+    useEffect(() => {
+        getUserData()
+    }, [])
 
     return (
         <div>

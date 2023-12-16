@@ -20,7 +20,7 @@ function App() {
         		<Route exact path="/login" element = { <Login /> }/>
 				<Route eaxct path="/register" element = { <Register /> }/>
 				<Route exact path="/profile" element = { <Profile /> }/>
-				<Route exact path="/post" element= { <ArticlePost /> }/>
+				<Route exact path="/post_article" element= { <ArticlePost /> }/>
       		</Routes>
     	</BrowserRouter>
 	)
