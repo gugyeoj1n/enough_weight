@@ -3,14 +3,17 @@ const article = require('../models/Article');
 
 exports.showProfile = async (req, res, next) => {
     try {
-        console.log(req.user);
-        const userId = req.user.id;
+        const nickname = req.user.nickname;
+        console.log(nickname);
+        const userArticles = await article.find({ "author" : nickname }).exec();
 
-        const userArticles = await article.find({ "author.id" : userId }).exec();
-
-        const userRoutines = await routine.find({ "author.id" : userId }).exec();
+        const userRoutines = await routine.find({ "author" : nickname }).exec();
+        const followers = req.user.follower.length;
+        const followings = req.user.following.length;
 
         res.json({
+            followers,
+            followings,
             userArticles,
             userRoutines,
         });

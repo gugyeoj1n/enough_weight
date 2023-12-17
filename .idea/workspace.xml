@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e82bdcee-fbc2-47bb-9656-1ec3ec1d6a55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/controllers/FeedController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/FeedRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/ArticleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ArticleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/FeedController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/FeedController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/RoutineController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/RoutineController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/profileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/profileController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Routine.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Routine.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="woojin" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,5 +75,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
