@@ -1,7 +1,29 @@
-const express = require('express')
-const router = express.Router()
-const { createArticle, updateArticle, readArticle, deleteArticle } = require("../controllers/ArticleController")
+const express = require("express");
+const articleController = require("../controllers/articleController");
+const multer = require("multer");
+const path = require("path");
 
-// URL 지정 필요
+const router = express.Router();
 
-module.exports = router
+const uploads = multer({
+    storage: multer.diskStorage({
+        destination(req, file, cb) {
+            cb(null, "uploads/");
+        },
+        filename(req, file, cb) {
+            const ext = path.extname(file.originalname);
+            cb(null, path.basename(file.originalname, ext) + Date.now() + ext);
+        },
+    }),
+    limits: { fileSize: 5 * 1024 * 1024 },
+});
+
+router.post("/", uploads.array("pictures", 5), articleController.createArticle);
+
+router.get("/:articleId", articleController.readArticle);
+
+router.patch('/:articleId', uploads.array("pictures", 5), articleController.updateArticle);
+
+router.delete("/:articleId", articleController.deleteArticle);
+
+module.exports = router;

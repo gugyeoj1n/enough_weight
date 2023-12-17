@@ -12,10 +12,17 @@ passportConfig();
 
 //Auth관련 routes 불러오기
 const authRouter = require("./routes/AuthRouter");
+const routineRouter = require("./routes/RoutineRouter");
+const articleRouter = require("./routes/ArticleRouter");
+const searchRouter = require("./routes/SearchRouter");
+const profileRouter = require("./routes/profileRouter");
+const followingRouter = require("./routes/FollowingRouter");
 
 // MongoDB 연결
 const mongoose = require("mongoose");
 const dbKey = require("./config/dev");
+
+app.use(express.json());
 
 mongoose
   .connect(dbKey.mongoURI, { dbName: "enough-weight" })
@@ -45,7 +52,7 @@ app.use(
 app.use(passport.initialize()); // passport 사용한다고 express 에 알림 (req.user, req.login, req.isAuthenticate 등등이 만들어짐)
 app.use(passport.session()); // session 을 이용하여 passport 를 동작한다
 
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/main", (req, res) => {
@@ -54,11 +61,16 @@ app.get("/main", (req, res) => {
 
 // auth 경로로 오는 모든 http 요청은 authRouter를 사용
 app.use("/auth", authRouter);
+app.use("/routine", routineRouter);
+app.use("/article", articleRouter);
+app.use("/search", searchRouter);
+app.use("/profile", profileRouter);
+app.use("/following", followingRouter);
 
 app.post("/api/test", (req, res) => {
-    console.log(req.body.userId)
-    res.send("HI")
-})
+  console.log(req.body.userId);
+  res.send("HI");
+});
 
 app.listen(port, () => {
   console.log(`${port} connected.`);

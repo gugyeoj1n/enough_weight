@@ -1,7 +1,6 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
-const { isLoggedIn, isNotLoggedIn } = require("../middlewares");
 
 // /auth/join 으로 post 요청이 들어올경우 실행될 로직
 exports.join = async (req, res, next) => {
@@ -54,4 +53,8 @@ exports.logout = (req, res) => {
   req.logout(() => {
     res.send({ success: true });
   });
+};
+
+exports.user = (req, res) => {
+  res.json({ user: req.user });
 };
