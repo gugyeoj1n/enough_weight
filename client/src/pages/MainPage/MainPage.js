@@ -73,6 +73,7 @@ function MainPage()
         console.log(url)
         await axios.get(url).then(response => {
             console.log(response.data)
+            navigate("/search", { state: { result: response.data, target: searchInput } })
         })
     }
 
@@ -109,22 +110,10 @@ function MainPage()
                             { Session.get("user_nickname") }
                         </text>
                         <button className="followerText">
-                            팔로워 { () => {
-                                try {
-                                    return Session.get("user_follower").length
-                                } catch {
-                                    backToLogin()
-                                }
-                            }}
+                            팔로워 { Session.get("user_follower").length }
                         </button>
                         <button className="followingText">
-                            팔로잉 { () => {
-                                try {
-                                    return Session.get("user_following").length
-                                } catch {
-                                    backToLogin()
-                                }
-                            }}
+                            팔로잉 { Session.get("user_following").length }
                         </button>
                         <button className="registerButton" onClick={ registerNavigate }>
                             회원가입

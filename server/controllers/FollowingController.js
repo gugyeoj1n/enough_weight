@@ -1,15 +1,13 @@
 const User = require("../models/User");
 
 exports.following = async (req, res, next) => {
-  const { id } = req.body;
-  console.log(id);
+  const { nickname } = req.body;
+  console.log(nickname);
 
-  const followingUser = await User.findOne({ id });
-
-  const query1 = { _id: req.user.id };
-  const update1 = { $push: { following: id } };
-  const query2 = { _id: id };
-  const update2 = { $push: { follower: req.user.id } };
+  const query1 = { nickname: req.user.nickname };
+  const update1 = { $push: { following: nickname } };
+  const query2 = { nickname: nickname };
+  const update2 = { $push: { follower: req.user.nickname } };
 
   User.updateOne(query1, update1)
     .then((result) => {

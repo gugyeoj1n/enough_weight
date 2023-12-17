@@ -3,10 +3,11 @@ import SearchItem from './SearchItem'
 import NavigationBar from '../NavigationBar'
 import Session from 'react-session-api'
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 function Search(){
     const navigate = useNavigate()
+    const location = useLocation()
 
     const loginNavigate = () => {
         navigate("/login")
@@ -20,7 +21,7 @@ function Search(){
                 loginNavigate()
             }
         } else {
-            // 자기 꺼 불러오기
+
         }
     }, [])
 
@@ -30,15 +31,15 @@ function Search(){
                 넉쇠
             </div>
             <div>
-                검색 : SIUU
+                검색 : { location.state.target }
             </div>
             <br/>
             <br/>
             <div className="users">
-            <SearchItem id={ "SIUU" }/>
-            <SearchItem id={ "SIUU" }/>
-            <SearchItem id={ "SIUU" }/>
-            <SearchItem id={ "SIUU" }/>
+                {   location.state.result.map((e, idx) => (
+                        <SearchItem key={ idx } id={ e.nickname }/>
+                    ))
+                }
             </div>
             <NavigationBar/>
         </div>
