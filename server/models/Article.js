@@ -3,11 +3,7 @@ const mongoose = require("../node_modules/mongoose")
 const articleSchema = mongoose.Schema({
 
     author: {
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-        },
-        nickname: String,
+        type: String,
     },
     title: {
         type: String
@@ -17,10 +13,6 @@ const articleSchema = mongoose.Schema({
     },
     pictures: {
         type: [Object]
-    },
-    likes: {
-        type: Number,
-        default: 0
     },
 }, { timestamps : true })
 

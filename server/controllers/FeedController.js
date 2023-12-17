@@ -1,16 +1,20 @@
 const article = require('../models/Article');
 const routine = require('../models/Routine');
 const User = require("../models/User");
+const {following} = require("./FollowingController");
 
-exports.showFeed = async (req, res) => {
+exports.showFeed = async (req, res, next) => {
     try {
-        const userId = req.user.id;
-        const user = await User.findById(userId).populate('following');
-        const followingUserIds = user.following.map(followingUser => followingUser._id);
+        console.log(req.user);
+        const userNickname = req.user.nickname;
 
-        const routines = await routine.find({ 'author.id': { $in: followingUserIds } });
+        const followings = (await User.findOne({ nickname: userNickname }))?.following || [];
 
-        const articles = await article.find({ 'author.id': { $in: followingUserIds } });
+        console.log(followings);
+
+        const articles = await article.find({ 'author': { $in: followings } });
+
+        const routines = await routine.find({ 'author': { $in: followings } });
 
         const followingContent = {
             routines,
