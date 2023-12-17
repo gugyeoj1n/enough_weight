@@ -92,7 +92,7 @@ function MainPage()
                     </div>
                     <div className="search">
                         <img className="searchIcon" src="images/search.svg"/>
-                        <input ref= { searchRef } className="searchInput" maxLength={ 20 }/>
+                        <input ref= { searchRef } className="searchInput" maxLength={ 20 } placeholder="닉네임을 입력하세요"/>
                     </div>
                 </div>
                 <div className="main">
