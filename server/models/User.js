@@ -15,6 +15,18 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+
+  following: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
+
+  follower: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
 });
 
 module.exports = mongoose.model("User", userSchema);
