@@ -18,13 +18,13 @@ const userSchema = mongoose.Schema({
 
   following: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
     },
   ],
 
   follower: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
     },
   ],
 });
