@@ -43,7 +43,7 @@ function Profile(){
             </div>
             <div className="accountInfo">
                 <div className="id">
-                    gugyeoj1n
+                    { Session.get("user_nickname") }
                 </div>
                 <div className="follow">
                     <text>

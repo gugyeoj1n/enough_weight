@@ -16,12 +16,16 @@ function NavigationBar(){
         navigate("/")
     }
 
+    const searchNavigate = () => {
+        navigate("/", { state: { search: true }})
+    }
+
     return (
         <div className="navigationBar">
             <button className="navigationButton" onClick={ mainNavigate }>
                 <img src="images/home.png" className="navigationItem"/>
             </button>
-            <button className="navigationButton">
+            <button className="navigationButton" onClick={ searchNavigate }>
                 <img src="images/search.svg" className="navigationItem"/>
             </button>
             <button className="navigationButton" onClick={ profileNavigate }>

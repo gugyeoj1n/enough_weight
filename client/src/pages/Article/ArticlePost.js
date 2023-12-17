@@ -17,6 +17,9 @@ function ArticlePost(){
     }
 
     const postSubmit = async () => {
+        if(titleInput.trim() === "" || contentInput.trim() === "")
+            return
+
         /*const data = {
             title: titleInput,
             content: contentInput,
@@ -68,7 +71,7 @@ function ArticlePost(){
                     <br/>
                     <input type="file" onChange={ (e) => {
                         setSelectedFile(e.target.files)
-                    }}/>
+                    }} multiple/>
                 </div>
                 <button className="postButton" onClick={ postSubmit }>
                     등록하기

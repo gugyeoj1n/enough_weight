@@ -1,14 +1,16 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import './MainPage.css'
 import ArticleList from "./ArticleList"
 import NavigationBar from "../NavigationBar"
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Session from 'react-session-api'
 
 function MainPage()
 {
     const navigate = useNavigate()
+    const location = useLocation()
+    const searchRef = useRef(null)
 
     const loginNavigate = () => {
         navigate("/login")
@@ -44,7 +46,8 @@ function MainPage()
         } else {
             // 로그인된 계정의 정보를 담은 요청을 보내서
             // 팔로우하는 사람들의 최신 게시글을 가져와야 됨
-            console.log("SIUUUUUUUUUUUUUU")
+            if(location.state.search)
+                searchRef.current.focus()
         }
     }, [])
 
@@ -54,7 +57,7 @@ function MainPage()
                 <div className="topBar">
                     <div className="account">
                         <text className="idText">
-                            gugyeoj1n
+                            { Session.get("user_nickname") }
                         </text>
                         <button className="followerText">
                             팔로워 100
@@ -71,7 +74,7 @@ function MainPage()
                     </div>
                     <div className="search">
                         <img className="searchIcon" src="images/search.svg"/>
-                        <input className="searchInput" maxLength={ 20 }/>
+                        <input ref= { searchRef } className="searchInput" maxLength={ 20 }/>
                     </div>
                 </div>
                 <div className="main">
