@@ -20,6 +20,10 @@ function NavigationBar(){
         navigate("/", { state: { search: true }})
     }
 
+    const routineNavigate = () => {
+        navigate("/post_routine")
+    }
+
     return (
         <div className="navigationBar">
             <button className="navigationButton" onClick={ mainNavigate }>
@@ -33,6 +37,9 @@ function NavigationBar(){
             </button>
             <button className="navigationButton" onClick={ postNavigate }>
                 <img src="images/edit.svg" className="navigationItem"/>
+            </button>
+            <button className="navigationButton" onClick={ routineNavigate }>
+                <img src="images/fitness.png" className="navigationItem"/>
             </button>
         </div>
     )

@@ -23,7 +23,7 @@ exports.join = async (req, res, next) => {
     });
 
     console.log(savedUser); // db 저장 확인용 (추후 삭제)
-    return res.send({ suceess: true });
+    return res.send({ success: true });
   } catch (error) {
     console.error(error);
     next(error);
