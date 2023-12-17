@@ -16,6 +16,10 @@ function ArticlePost(){
         navigate("/login")
     }
 
+    const mainNavigate = () => {
+        navigate("/")
+    }
+
     const postSubmit = async () => {
         if(titleInput.trim() === "" || contentInput.trim() === "")
             return
@@ -42,7 +46,11 @@ function ArticlePost(){
         }
 
         await axios.post("/article", form).then(response => {
-            console.log(response.data)
+            if(window.confirm("작성이 완료되었습니다!")) {
+                mainNavigate()
+            } else {
+                mainNavigate()
+            }
         })
     }
 

@@ -2,35 +2,35 @@ import './ArticleList.css'
 import ArticleItem from './ArticleItem'
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import Session from 'react-session-api'
 
 function ArticleList(){
-    const [decoded, setDecoded] = useState([])
-    const decoding = async () => {
-        const data = {
-            userId: "test"
-        }
+    useEffect(() => {
+        getArticles()
+    }, [])
 
-        await axios.post('/api/test', data).then(response => {
-            setDecoded(response.data.decoded)
+    const [articles, setArticles] = useState([])
+
+    const getArticles = async () => {
+        await axios.get('/feed').then(response => {
+            response.data.articles.forEach(e => {
+                const originalDateString = e.createdAt
+                const originalDate = new Date(originalDateString)
+                const formattedDate = `${originalDate.getFullYear()}. ${String(originalDate.getMonth() + 1).padStart(2, '0')}. ${String(originalDate.getDate()).padStart(2, '0')}. ${String(originalDate.getHours()).padStart(2, '0')}:${String(originalDate.getMinutes()).padStart(2, '0')}`
+
+                setArticles(articles.concat(<ArticleItem id={ e.author } date={ formattedDate } title={ e.title } content={ e.content } />))
+            })
         })
     }
 
-    useEffect(() => {
-        //decoding()
-    }, [])
-
     return (
         <div className="articles">
-            {/*
-            {decoded.map((item, idx) => (
-                <ArticleItem 
-                    id={  }
-                    date={  }
-                    likes={  }
-                    title={  }
-                    content={  }/>
-            ))}
-            */}
+            {
+                articles
+            }
+            <ArticleItem/>
+            <ArticleItem/>
+            <ArticleItem/>
         </div>
     )
 }

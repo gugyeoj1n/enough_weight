@@ -22,6 +22,10 @@ function RoutinePost(){
         navigate("/login")
     }
 
+    const mainNavigate = () => {
+        navigate('/')
+    }
+
     const postSubmit = async () => {
         if(titleInput.trim() === "" || routines.length === 0)
             return
@@ -39,9 +43,11 @@ function RoutinePost(){
         console.log(request)
 
         await axios.post("/routine", request).then(response => {
-            console.log(response.data)
-        }).catch(e => {
-            console.log(e)
+            if(window.confirm("작성이 완료되었습니다!")) {
+                mainNavigate()
+            } else {
+                mainNavigate()
+            }
         })
     }
 

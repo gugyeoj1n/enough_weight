@@ -40,4 +40,12 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+
+  app.use(
+    '/feed',
+    createProxyMiddleware({
+      target: 'http://localhost:7676',
+      changeOrigin: true,
+    })
+  );
 };

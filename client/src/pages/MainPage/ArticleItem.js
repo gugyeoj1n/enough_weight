@@ -1,6 +1,6 @@
 import './ArticleItem.css'
 
-function ArticleItem({ id, date, likes, title, content }){
+function ArticleItem({ id, date, title, content }){
     return (
         <div className="article">
             <div className="profile">
@@ -12,14 +12,6 @@ function ArticleItem({ id, date, likes, title, content }){
                     <div className="profileDate">
                         {date}
                     </div>
-                </div>
-                <div className="likes">
-                    <button className="likeButton">
-                        <img src="images/like.png" className="likeIcon"/>
-                    </button>
-                    <text className="likeText">
-                        {likes}
-                    </text>
                 </div>
             </div>
             <div className="content">
