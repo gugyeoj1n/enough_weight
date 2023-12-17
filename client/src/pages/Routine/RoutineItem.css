@@ -1,0 +1,14 @@
+.routineItemBackground {
+    width: 95%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.routineInput {
+    width: 180px;
+    height: 30px;
+    font-size: 17px;
+}

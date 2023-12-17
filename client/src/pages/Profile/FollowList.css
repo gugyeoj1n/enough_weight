@@ -1,0 +1,12 @@
+.followList {
+    width: 80%;
+    height: 70%;
+    overflow-y: auto;
+}
+
+.followListContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
