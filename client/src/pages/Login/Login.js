@@ -31,6 +31,8 @@ function Login(){
                         const user = response.data.user
                         Session.set("user_nickname", user.nickname)
                         Session.set("user_id", user._id)
+                        Session.set("user_follower", user.follower)
+                        Session.set("user_following", user.following)
                         mainNavigate()
                     })
                 }

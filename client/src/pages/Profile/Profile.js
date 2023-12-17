@@ -47,11 +47,11 @@ function Profile(){
                 </div>
                 <div className="follow">
                     <text>
-                    팔로우 100
+                        팔로우 { Session.get("user_follower").length }
                     </text>
                     <br/>
                     <text>
-                    팔로잉 100
+                        팔로잉 { Session.get("user_following").length }
                     </text>
                 </div>
                 <button className="followManageButton" onClick={ ManageModal }>
