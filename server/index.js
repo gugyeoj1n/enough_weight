@@ -17,6 +17,7 @@ const articleRouter = require("./routes/ArticleRouter");
 const searchRouter = require("./routes/SearchRouter");
 const profileRouter = require("./routes/profileRouter");
 const followingRouter = require("./routes/FollowingRouter");
+const feedRouter = require("./routes/FeedRouter");
 
 // MongoDB 연결
 const mongoose = require("mongoose");
@@ -66,6 +67,7 @@ app.use("/article", articleRouter);
 app.use("/search", searchRouter);
 app.use("/profile", profileRouter);
 app.use("/following", followingRouter);
+app.use("/feed", feedRouter);
 
 app.post("/api/test", (req, res) => {
   console.log(req.body.userId);

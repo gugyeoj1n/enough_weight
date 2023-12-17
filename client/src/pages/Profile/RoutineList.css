@@ -1,7 +1,6 @@
 .routineContent {
-    width: 350px;
+    width: 450px;
     height: 100%;
-    background-color: cornflowerblue;
     display: flex;
     flex-direction: column;
     align-items: center;

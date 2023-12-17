@@ -1,7 +1,7 @@
 .articleContent {
-    width: 350px;
+    width: 450px;
     height: 100%;
-    background-color: bisque;
+    background: none;
     display: flex;
     flex-direction: column;
     align-items: center;

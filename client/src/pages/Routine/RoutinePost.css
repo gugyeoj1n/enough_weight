@@ -1,3 +1,16 @@
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+}
+
+.titleText {
+    margin: 5%;
+    font-size: 30px;
+}
+
 .postBackground {
     width: 500px;
     height: 500px;
@@ -17,19 +30,14 @@
     margin: 20px;
 }
 
-.contentInput {
+.contentBackground {
     width: 455px;
-    height: 250px;
+    height: 60%;
     border: none;
+    background-color: white;
     border-radius: 5px;
     margin: 20px;
     font-size: 18px;
-}
-
-.pictureInput {
-    width: 400px;
-    height: 100px;
-    margin: 20px;
 }
 
 .postButton {
