@@ -5,7 +5,18 @@ function FollowList(){
     return (
         <div className="followList">
             <div className="followListContainer">
-                <FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
+			<FollowItem id={ "d" }/>
             </div>
         </div>
     )
