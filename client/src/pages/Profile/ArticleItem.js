@@ -1,19 +1,30 @@
 import './ArticleItem.css'
+import React, { useEffect, useState } from 'react'
+import ImageItem from './ImageItem'
 
-function ArticleItem(){
+function ArticleItem({ id, title, date, content, pictures }){  
+    const imagePath = "/images/"
+
+    useEffect(() => {
+        instantiate()
+    }, [])
+
+    const [images, setImages] = useState([])
+
+    const instantiate = () => {
+        const newArticles = pictures.map(e => {
+            const fileName = e.path.match(/[^\/\\]+$/)[0]
+            return <ImageItem path={ imagePath + fileName } />
+          });
+          
+          setImages(newArticles)
+    }
+    
     return (
         <div className="article">
             <div className="profile">
                 <div className="profileDate">
-                    2023. 12. 17
-                </div>
-                <div className="likes">
-                    <button className="likeButton">
-                        <img src="images/like.png" className="likeIcon"/>
-                    </button>
-                    <text className="likeText">
-                        11
-                    </text>
+                    { date }
                 </div>
                 <button className="editButton">
                     <img src="images/edit.svg" className="likeIcon"/>
@@ -24,22 +35,16 @@ function ArticleItem(){
             </div>
             <div className="content">
                 <text className="contentTitle">
-                    앙김옥지
+                    { title }
                 </text>
                 <text className="contentText">
-                    앙김옥지앙김옥지앙김옥지앙김옥지
+                    { content }
                 </text>
                 <hr className="line"/>
                 <div className="contentPictures">
-                    <div className="contentPicture">
-                        사진
-                    </div>
-                    <div className="contentPicture">
-                        사진
-                    </div>
-                    <div className="contentPicture">
-                        사진
-                    </div>
+                    {
+                        images
+                    }
                 </div>
             </div>
         </div>

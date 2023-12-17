@@ -2,12 +2,14 @@
     background-color: #d9d9d9;
     border: none;
     border-radius: 3%;
-    width: 300px;
-    height: 90%;
-    margin: 5px;
+    width: 100%;
+    height: 480px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .profile {
@@ -57,6 +59,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-right: 75px;
 }
 
 .content {
@@ -64,7 +67,7 @@
     border: none;
     border-radius: 5%;
     width: 90%;
-    height: 80%;
+    height: 78%;
     display: flex;
     flex-direction: column;
 }
@@ -102,10 +105,13 @@
     gap: 10px;
 }
 
-.contentPicture {
-    border-radius: 3%;
+.editButton {
+    background-color: white;
+    border-radius: 15px;
     border: none;
-    background: #797979;
-    width: 80px;
-    height: 140px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
 }

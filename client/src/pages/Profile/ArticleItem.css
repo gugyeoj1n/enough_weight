@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .profile {
@@ -102,14 +103,6 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-}
-
-.contentPicture {
-    border-radius: 3%;
-    border: none;
-    background: #797979;
-    width: 80px;
-    height: 140px;
 }
 
 .editButton {

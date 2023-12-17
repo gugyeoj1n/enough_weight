@@ -48,4 +48,12 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+
+  app.use(
+    '/profile',
+    createProxyMiddleware({
+      target: 'http://localhost:7676',
+      changeOrigin: true,
+    })
+  );
 };

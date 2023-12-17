@@ -1,37 +1,50 @@
 import './ArticleItem.css'
+import React, { useEffect, useState } from 'react'
+import ImageItem from './ImageItem'
 
-function ArticleItem({ id, date, title, content }){
+function ArticleItem({ id, title, date, content, pictures }){  
+    const imagePath = "/images/"
+
+    useEffect(() => {
+        instantiate()
+    }, [])
+
+    const [images, setImages] = useState([])
+
+    const instantiate = () => {
+        const newArticles = pictures.map(e => {
+            const fileName = e.path.match(/[^\/\\]+$/)[0]
+            return <ImageItem path={ imagePath + fileName } />
+          });
+          
+          setImages(newArticles)
+    }
+    
     return (
         <div className="article">
             <div className="profile">
-                <div className="profileImage"/>
-                <div>
-                    <div className="profileId">
-                        {id}
-                    </div>
-                    <div className="profileDate">
-                        {date}
-                    </div>
+                <div className="profileDate">
+                    { date }
                 </div>
+                <button className="editButton">
+                    <img src="images/edit.svg" className="likeIcon"/>
+                </button>
+                <button className="editButton">
+                    <img src="images/delete.png" className="likeIcon"/>
+                </button>
             </div>
             <div className="content">
                 <text className="contentTitle">
-                    {title}
+                    { title }
                 </text>
                 <text className="contentText">
-                    {content}
+                    { content }
                 </text>
                 <hr className="line"/>
                 <div className="contentPictures">
-                    <div className="contentPicture">
-                        사진
-                    </div>
-                    <div className="contentPicture">
-                        사진
-                    </div>
-                    <div className="contentPicture">
-                        사진
-                    </div>
+                    {
+                        images
+                    }
                 </div>
             </div>
         </div>

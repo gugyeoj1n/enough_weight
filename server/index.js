@@ -1,5 +1,6 @@
 // express 서버
 const express = require("express");
+const path = require('path')
 const app = express();
 const port = 7676;
 
@@ -36,6 +37,9 @@ mongoose
 
 // 프론트에서 전송된 데이터를 해석(parse)하여 서버에서 사용할 수 있도록 해줌.
 // req.body 안에 name 속성의 이름으로 값을 parse
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(

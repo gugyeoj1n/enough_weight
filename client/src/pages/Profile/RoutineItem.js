@@ -1,19 +1,11 @@
 import './RoutineItem.css'
 
-function RoutineItem(){
+function RoutineItem({ id, date, title, content }){
     return (
         <div className="article">
             <div className="profile">
                 <div className="profileDate">
-                    2023. 12. 17
-                </div>
-                <div className="likes">
-                    <button className="likeButton">
-                        <img src="images/like.png" className="likeIcon"/>
-                    </button>
-                    <text className="likeText">
-                        11
-                    </text>
+                    { date }
                 </div>
                 <button className="editButton">
                     <img src="images/edit.svg" className="likeIcon"/>
@@ -24,7 +16,7 @@ function RoutineItem(){
             </div>
             <div className="content">
                 <text className="routineTitle">
-                    앙김옥지
+                    { title }
                 </text>
                 <div className="contentList">
                     <div className="exercise">

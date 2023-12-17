@@ -13,13 +13,15 @@ function ArticleList(){
 
     const getArticles = async () => {
         await axios.get('/feed').then(response => {
-            response.data.articles.forEach(e => {
+            const newArticles = response.data.articles.map(e => {
+                console.log(e.title)
                 const originalDateString = e.createdAt
                 const originalDate = new Date(originalDateString)
                 const formattedDate = `${originalDate.getFullYear()}. ${String(originalDate.getMonth() + 1).padStart(2, '0')}. ${String(originalDate.getDate()).padStart(2, '0')}. ${String(originalDate.getHours()).padStart(2, '0')}:${String(originalDate.getMinutes()).padStart(2, '0')}`
-
-                setArticles(articles.concat(<ArticleItem id={ e.author } date={ formattedDate } title={ e.title } content={ e.content } />))
-            })
+                return <ArticleItem key={e.id} id={e.author} title={e.title} date={formattedDate} content={e.content} pictures={e.pictures} />
+              });
+        
+              setArticles(newArticles);
         })
     }
 
@@ -28,9 +30,6 @@ function ArticleList(){
             {
                 articles
             }
-            <ArticleItem/>
-            <ArticleItem/>
-            <ArticleItem/>
         </div>
     )
 }
