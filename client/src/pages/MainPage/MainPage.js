@@ -37,7 +37,20 @@ function MainPage()
     }
 
     const registerNavigate = () => {
-        navigate("/register")
+        if(window.confirm("정말 로그아웃하시겠습니까?")) {
+            const logout = async () => {
+                await axios.get('/auth/logout').then(response => {
+                    console.log(response.data)
+                    if(response.data.success === true) {
+                        Session.remove("user_id")
+                        Session.remove("user_nickname")
+                        navigate("/register")
+                    }
+                })
+            }
+
+            logout()
+        }
     }
 
     useEffect(() => {
@@ -46,8 +59,13 @@ function MainPage()
         } else {
             // 로그인된 계정의 정보를 담은 요청을 보내서
             // 팔로우하는 사람들의 최신 게시글을 가져와야 됨
-            if(location.state.search)
-                searchRef.current.focus()
+            try {
+                if(location.state.search)
+                    searchRef.current.focus()
+            }
+            catch {
+
+            }
         }
     }, [])
 
