@@ -6,6 +6,7 @@ exports.createRoutine = async (req, res, next) => {
             title: req.body.title,
             author: req.user.nickname,
             content: req.body.content,
+            likes: req.body.likes,
         })
         res.json(newRoutine);
     } catch (error) {

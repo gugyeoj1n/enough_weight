@@ -5,11 +5,7 @@ const routineSchema = mongoose.Schema({
         type: String,
     },
     author: {
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-        },
-        nickname: String,
+        type: String,
     },
     content: {
         type: [
@@ -18,10 +14,6 @@ const routineSchema = mongoose.Schema({
                 repeats: String
             }
         ],
-    },
-    likes: {
-        type: Number,
-        default: 0
     },
 }, { timestamps: true })
 
