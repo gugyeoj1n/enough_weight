@@ -56,5 +56,5 @@ exports.logout = (req, res) => {
 };
 
 exports.user = (req, res) => {
-  res.json({ user: req.user });
+    res.json({ user: req.user });
 };

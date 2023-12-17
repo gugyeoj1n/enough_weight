@@ -1,10 +1,15 @@
 import './Profile.css'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import FollowList from './FollowList'
 import ArticleList from './ArticleList'
 import RoutineList from './RoutineList'
+import NavigationBar from '../NavigationBar'
+import Session from 'react-session-api'
+import { useNavigate } from "react-router-dom"
 
 function Profile(){
+    const navigate = useNavigate()
+
     // 로그인된 계정의 프로필 페이지라면
     // 관리 버튼을 활헝화하고 아니라면
     // 비활성화하는 로직이 필요함
@@ -15,6 +20,22 @@ function Profile(){
         setIsFollowOpen(!isFollowOpen);
     }
 
+    const loginNavigate = () => {
+        navigate("/login")
+    }
+
+    useEffect(() => {
+        if(!Session.get("user_id")) {
+            if(window.confirm("로그인된 정보가 없어 로그인 화면으로 이동합니다.")) {
+                loginNavigate()
+            } else {
+                loginNavigate()
+            }
+        } else {
+            // 자기 꺼 불러오기
+        }
+    }, [])
+
     return (
         <div className="background">
             <div className="titleText">
@@ -22,7 +43,7 @@ function Profile(){
             </div>
             <div className="accountInfo">
                 <div className="id">
-                    gugyeoj1n
+                    { Session.get("user_nickname") }
                 </div>
                 <div className="follow">
                     <text>
@@ -57,6 +78,7 @@ function Profile(){
                 </div>
             </div>
             )}
+            <NavigationBar/>
         </div>
     )
 }

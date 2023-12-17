@@ -1,0 +1,23 @@
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+}
+
+.titleText {
+    margin: 5%;
+    font-size: 30px;
+}
+
+.users {
+    background: none;
+    border: none;
+    width: 40%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

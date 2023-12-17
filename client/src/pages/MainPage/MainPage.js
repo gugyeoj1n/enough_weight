@@ -1,11 +1,16 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import './MainPage.css'
 import ArticleList from "./ArticleList"
+import NavigationBar from "../NavigationBar"
 import axios from 'axios'
+import React, { useEffect, useRef } from 'react'
+import Session from 'react-session-api'
 
 function MainPage()
 {
     const navigate = useNavigate()
+    const location = useLocation()
+    const searchRef = useRef(null)
 
     const loginNavigate = () => {
         navigate("/login")
@@ -25,18 +30,44 @@ function MainPage()
     }
 
     const logoutNavigate = () => {
-        // 로그인 정보 삭제 필요
+        Session.remove("user_id")
+        Session.remove("user_nickname")
 
         navigate("/login")
     }
 
     const registerNavigate = () => {
-        navigate("/register")
+        if(window.confirm("정말 로그아웃하시겠습니까?")) {
+            const logout = async () => {
+                await axios.get('/auth/logout').then(response => {
+                    console.log(response.data)
+                    if(response.data.success === true) {
+                        Session.remove("user_id")
+                        Session.remove("user_nickname")
+                        navigate("/register")
+                    }
+                })
+            }
+
+            logout()
+        }
     }
 
-    const profileNavigate = () => {
-        navigate("/profile")
-    }
+    useEffect(() => {
+        if(!Session.get("user_id")) {
+            loginNavigate()
+        } else {
+            // 로그인된 계정의 정보를 담은 요청을 보내서
+            // 팔로우하는 사람들의 최신 게시글을 가져와야 됨
+            try {
+                if(location.state.search)
+                    searchRef.current.focus()
+            }
+            catch {
+
+            }
+        }
+    }, [])
 
     return (
         <div>
@@ -44,7 +75,7 @@ function MainPage()
                 <div className="topBar">
                     <div className="account">
                         <text className="idText">
-                            gugyeoj1n
+                            { Session.get("user_nickname") }
                         </text>
                         <button className="followerText">
                             팔로워 100
@@ -61,7 +92,7 @@ function MainPage()
                     </div>
                     <div className="search">
                         <img className="searchIcon" src="images/search.svg"/>
-                        <input className="searchInput" maxLength={ 20 }/>
+                        <input ref= { searchRef } className="searchInput" maxLength={ 20 } placeholder="닉네임을 입력하세요"/>
                     </div>
                 </div>
                 <div className="main">
@@ -70,23 +101,7 @@ function MainPage()
                     </div>
                     <ArticleList/>
                 </div>
-                <div className="navigationBar">
-                    <button className="navigationButton">
-                        <img src="images/home.png" className="navigationItem"/>
-                    </button>
-                    <button className="navigationButton">
-                        <img src="images/search.svg" className="navigationItem"/>
-                    </button>
-                    <button className="navigationButton" onClick={ profileNavigate }>
-                        <img src="images/person.svg" className="navigationItem"/>
-                    </button>
-                    <button className="navigationButton">
-                        <img src="images/edit.svg" className="navigationItem"/>
-                    </button>
-                    <button className="navigationButton">
-                        <img src="images/setting.svg" className="navigationItem"/>
-                    </button>
-                </div>
+                <NavigationBar/>
             </div>
         </div>
     );

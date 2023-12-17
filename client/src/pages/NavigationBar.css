@@ -1,0 +1,34 @@
+.navigationBar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    margin-right: 10%;
+    height: 320px;
+    width: 70px;
+    background: #797979;
+    border-radius: 25px;
+}
+
+.navigationButton {
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navigationItem {
+    height: 40px;
+    width: 40px;
+}
